@@ -39,11 +39,11 @@ isMarried = false;
 console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
 
 // Variable Mutation
-age = 'Twenty Five';
-alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
-
-var lastName = prompt('What is his last Name?');
-console.log(firstName + ' ' + lastName);
+// age = 'Twenty Five';
+// alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+//
+// var lastName = prompt('What is his last Name?');
+// console.log(firstName + ' ' + lastName);
 
 /*****************************************/
 /************* Basic Operators. **********/
@@ -110,3 +110,92 @@ x += 10;
 console.log(x);
 x++;
 console.log(x);
+
+/*****************************************/
+/********** If / Else Statements. ********/
+/*****************************************/
+
+var firstName = 'Youri';
+var civilStatus = 'single';
+
+if ('married' === civilStatus) {
+  console.log(firstName + ' is married!');
+} else {
+  console.log(firstName + ' will hopefully marry soon :)');
+}
+
+var isMarried = true;
+if (isMarried) {
+  console.log(firstName + ' is married!');
+} else {
+  console.log(firstName + ' will hopefully marry soon :)');
+}
+
+/*****************************************/
+/************* Boolean Logic. ************/
+/*****************************************/
+
+var firstName = 'Bart'
+var age = 20;
+
+if (age < 13) {
+  console.log(firstName + ' is a boy.');
+} else if (13 <= age && 20 > age) {
+  console.log(firstName + ' is a teenager.');
+} else if (20 <= age && 30 > age)
+  console.log(firstName + ' is a young man.');
+else {
+  console.log(firstName + ' is a man.');
+}
+
+/*********************************************************************/
+/************* The Ternary Operator and Switch Statements  ***********/
+/*********************************************************************/
+
+var firstName = 'Mike'
+var age = 16;
+
+age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
+
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(drink);
+
+if (age >= 18) {
+  var drink = 'beer';
+} else {
+  var drink = 'juice';
+}
+
+var job = 'Developer'
+
+switch (job) {
+  case 'Developer':
+    console.log(firstName + ' Develops');
+    break;
+  case 'Driver':
+    console.log(firstName + ' Drives a Uber');
+    break;
+  case 'Designer':
+    console.log(firstName + ' Degins');
+    break;
+  case 'Instructor':
+  case 'Teacher':
+    console.log(firstName + ' Teaches kids');
+    break;
+  default:
+    console.log(firstName + ' does something else.');
+}
+
+switch (true) {
+  case age < 13:
+    console.log(firstName + ' is a boy');
+    break;
+  case 13 <= age && 20 > age:
+    console.log(firstName + ' is a teenager.');
+    break;
+  case 20 <= age && 30 > age:
+    console.log(firstName + ' is a young man.');
+    break;
+  default:
+    console.log(firstName + ' is a man.');
+}

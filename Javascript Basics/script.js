@@ -199,3 +199,24 @@ switch (true) {
   default:
     console.log(firstName + ' is a man.');
 }
+
+
+/*********************************************************************/
+/************ Truthy and Falsy values and equality operatos **********/
+/*********************************************************************/
+
+// Falsy values: undefined, null, 0, '', containing
+// Truthy values: not Falsy values
+
+var height = 'twenty';
+
+if (height || height === 0) {
+  console.log('Variable is defined');
+} else {
+  console.log('Variable has NOT been defined');
+}
+
+// Equality Operators
+if (height === '23') {
+  console.log('The == operator does not type coercion!');
+}

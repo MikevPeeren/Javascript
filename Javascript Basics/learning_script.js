@@ -220,3 +220,92 @@ if (height || height === 0) {
 if (height === '23') {
   console.log('The == operator does not type coercion!');
 }
+
+/*********************************************************************/
+/************************ Functions **********************************/
+/*********************************************************************/
+
+function calculateAge(birthYear) {
+  return 2019 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageMonika = calculateAge(1991);
+
+console.log(ageJohn, ageMike, ageMonika);
+
+function yearsUntilRetirement(year, firstName) {
+  var age = calculateAge(year)
+  var retirement = 70 - age;
+  console.log(firstName + ' retires in ' + retirement + ' years.');
+}
+
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1991, 'Monika');
+
+/*********************************************************************/
+/************** Function Statements and Expressions ******************/
+/*********************************************************************/
+
+// Function declaration
+// Function whatDoYouDo(job, firstName){}
+
+// Function Experession
+var whatDoYouDo = function(job, firstName) {
+  switch (job) {
+    case 'teacher':
+      return firstName + ' teaches kids how to code';
+    case 'driver':
+      return firstName + ' drvies an Uber.'
+    case 'designer':
+      return firstName + ' designs beautifull websites'
+    default:
+      return firstName + ' does something else'
+  }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Monika'));
+console.log(whatDoYouDo('retired', 'Mark'));
+
+/*********************************************************************/
+/****************************** Arrays *******************************/
+/*********************************************************************/
+
+// Initialize new array
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+names[1] = 'Ben'
+console.log(names);
+names[names.length] = 'Mary';
+console.log(names);
+
+// Different data types
+var john = ['John', 'Smith', 1990, 'teacher', 'false'];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+console.log(john);
+john.pop();
+console.log(john);
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+console.log(isDesigner);
+
+john.push('designer');
+var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+console.log(isDesigner);

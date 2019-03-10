@@ -12,7 +12,7 @@ function calculateTipAmount(billAmount) {
     tip = 10 / 100;
   }
 
-    return (billAmount * tip).toFixed(2);
+  return (billAmount * tip).toFixed(2);
 }
 
 function calculateTotalAmount(bill, tip) {

@@ -309,3 +309,93 @@ console.log(isDesigner);
 john.push('designer');
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
 console.log(isDesigner);
+
+/*********************************************************************/
+/********************* Objects and Properties ************************/
+/*********************************************************************/
+
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: [
+    'Jane', 'Joe', 'Mark', 'Emily'
+  ],
+  job: 'teacher',
+  isMarried: false
+};
+
+console.log(john);
+console.log(john.firstName);
+console.log(john['lastName']);
+
+var x = 'birthYear'
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+var jane = new Object();
+jane.firstName = 'Jane'
+jane.birthYear = 1991;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+/*********************************************************************/
+/************************ Objects and Methods ************************/
+/*********************************************************************/
+
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1993,
+  family: [
+    'Jane', 'Joe', 'Mark', 'Emily'
+  ],
+  job: 'teacher',
+  isMarried: false,
+  calcAge: function(birthYear) {
+    this.age = 2018 - this.birthYear;
+  }
+};
+john.calcAge()
+console.log(john);
+
+/*********************************************************************/
+/************************ Loops and Iteration ************************/
+/*********************************************************************/
+
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+
+for (var i = 0; i < john.length; i++) {
+  console.log(john[i]);
+}
+
+// While loop
+var i = 0;
+while (i < john.length) {
+  console.log(john[i]);
+  i++;
+}
+
+// continue and break Statements
+var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') continue;
+  console.log(john[i]);
+}
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') break;
+  console.log(john[i]);
+}
+
+// Looping backwards
+for (var i = john.length - 1; i >= 0; i--) {
+  console.log(john[i]);
+}

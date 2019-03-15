@@ -9,6 +9,40 @@
 <body>
   <center>
     <h1>How JavaScript Works Behind the Scenes</h1>
+    <p>
+      <h2>Execution context:</h2>
+      A box, a Container or a wrapper which stores variables and in which a piece of our code is evaluated and executed.
+      <br>
+      <br>
+      <h3>Global Execution Context:</h3>
+      - Code that is not inside any Function
+      <br>
+      - Associated with the global object.
+      <br>
+      - In the browser, that is the window object.
+      <h4>Execution context in detail:</h4>
+      - Variable Object(VO)
+      <br>
+      - Scope Chain
+
+      <h2>Hoisting:</h2>
+      Hoisting is default behaviour of JavaScript of moving declarations to the top.
+      <br>
+      In the example you can see that console log can be called before the var declartion has been made.
+      <br>
+
+      <h2>Scoping:</h2>
+      Each new function creates a scope.
+      <br>
+      Lexical Scoping: Function written inside a Function gets acces to the scope of the outer Function(Parent) including Variables
+
+      <h2>The 'This' Variable:</h2>
+      Regular function call: The 'This' keyword points at the global object(The window object, in the browser).
+      <br>
+      Method call: The 'This' variable points to the object that is calling the method.
+      <br>
+      The 'This' keyword is not assigned a value until a function where it is defined is actually called.
+    </p>
   </center>
 </body>
 

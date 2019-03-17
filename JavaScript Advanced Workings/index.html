@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Advanced Workings</title>
+</head>
+
+<body>
+  <center>
+    <h1>JavaScript Advanced Workings</h1>
+    <p>
+      <h2>Primitives:</h2>
+      Numbers, Strings, Booleans, Undefined, Null.
+      <br>
+      EVERYTHING else is an OBJECT.
+
+      <h2>Object Oriented Object:</h2>
+      Objects interacting with one another through methods and properties.
+      <br>
+      Used to store data, structure applications into modules and keeping code clean.
+
+      <h2>Prototype</h2>
+      Every JavaScript object has a prototype property. Which makes inheritance possible in JavaScript
+      <br>
+      The prototype property of an object is where we put methods and properties that we want other objects to inherit
+      <br>
+      The constructor's prototype property is NOT the prototype of the constructor itself, it is the prototype of ALL instances that are created through it.
+      <br>
+      When a certain method(or property) is called, the search starts in the object itself, and if it cannot be found, the search moves on to the object's prototype. This continues until the method is found: prototype chain
+    </p>
+  </center>
+</body>
+
+<script src="advanced_workings_script.js"></script>
+
+</html>

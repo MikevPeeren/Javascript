@@ -15,73 +15,6 @@ var scores, roundScore, activePlayer, playerNames, gamePlaying;
 
 initializeGame();
 
-document.querySelector('.btn-roll').addEventListener('click', function() {
-  if (gamePlaying) {
-    // Random number
-    var dice = getRandomInt(1, 7);
-
-    // Display the result
-    var diceDOM = document.querySelector('.dice');
-    diceDOM.style.display = 'block';
-    diceDOM.src = 'dice-' + dice + '.png';
-
-    // Update round score IF the rolled number was NOT a 1
-    if (dice !== 1) {
-      // Add the Score
-      roundScore += dice;
-      document.querySelector('#current-' + activePlayer).textContent = roundScore;
-    } else {
-      // Next Player
-      nextPlayer();
-    }
-  }
-});
-
-document.querySelector('.btn-hold').addEventListener('click', function() {
-  if (gamePlaying) {
-    // Add current score to GLOBAL score
-    scores[activePlayer] += roundScore;
-
-    // Update the UI
-    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-
-    // Check if the Player has won the Game.
-    if (scores[activePlayer] >= 25) {
-      document.querySelector('.dice').style.display = 'none';
-      document.getElementById('player-name').textContent = playerNames[activePlayer];
-      document.querySelector('.game-completed-label').style.display = 'block';
-      gamePlaying = false;
-    } else {
-      // Next Player
-      nextPlayer();
-    }
-  }
-});
-
-document.querySelector('.btn-new').addEventListener('click', initializeGame);
-
-// Method to generate a random int based on the given parameters
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-// Move towards the Next Player
-function nextPlayer() {
-  // Next Player
-  activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-  roundScore = 0;
-
-  document.getElementById('current-0').textContent = '0';
-  document.getElementById('current-1').textContent = '0';
-
-  document.querySelector('.player-0-panel').classList.toggle('active');
-  document.querySelector('.player-1-panel').classList.toggle('active');
-
-  document.querySelector('.dice').style.display = 'none';
-}
-
 // Initializing the game.
 function initializeGame() {
   scores = [0, 0];
@@ -106,3 +39,73 @@ function initializeGame() {
   document.getElementById('player-name').textContent = playerNames[activePlayer];
   document.querySelector('.game-completed-label').style.display = 'none';
 }
+
+// Generate a random int based on the given parameters
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// Move towards the Next Player
+function nextPlayer() {
+  // Next Player
+  activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+  roundScore = 0;
+
+  document.getElementById('current-0').textContent = '0';
+  document.getElementById('current-1').textContent = '0';
+
+  document.querySelector('.player-0-panel').classList.toggle('active');
+  document.querySelector('.player-1-panel').classList.toggle('active');
+
+  document.querySelector('.dice').style.display = 'none';
+}
+
+// Query selector to check if button roll has been click
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  if (gamePlaying) {
+    // Random number
+    var dice = getRandomInt(1, 7);
+
+    // Display the result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
+
+    // Update round score IF the rolled number was NOT a 1
+    if (dice !== 1) {
+      // Add the Score
+      roundScore += dice;
+      document.querySelector('#current-' + activePlayer).textContent = roundScore;
+    } else {
+      // Next Player
+      nextPlayer();
+    }
+  }
+});
+
+// Query selector to check if button hold has been click
+document.querySelector('.btn-hold').addEventListener('click', function() {
+  if (gamePlaying) {
+    // Add current score to GLOBAL score
+    scores[activePlayer] += roundScore;
+
+    // Update the UI
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+    // Check if the Player has won the Game.
+    if (scores[activePlayer] >= 25) {
+      document.querySelector('.dice').style.display = 'none';
+      document.getElementById('player-name').textContent = playerNames[activePlayer];
+      document.querySelector('.game-completed-label').style.display = 'block';
+      gamePlaying = false;
+    } else {
+      // Next Player
+      nextPlayer();
+    }
+  }
+});
+
+// Query selector to check if button new has been click
+document.querySelector('.btn-new').addEventListener('click', initializeGame);

@@ -1,1 +1,2 @@
-This is a repository that will display everything related to Plain JavaScript :)
+# JavaScript
+A simple project that displays Plain JavaScript.

@@ -1,1 +1,1 @@
-This is a repository that will display my learning curve in JavaScript :)
+This is a repository that will display everything related to Plain JavaScript :)
